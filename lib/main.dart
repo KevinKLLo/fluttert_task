@@ -157,6 +157,10 @@ class FavoritesPage extends StatelessWidget {
     var appState = context.watch<MyAppState>();
     return ListView(
       children: [
+        Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Text('You have ${appState.favorites.length} favorites:'),
+        ),
         for (var pair in appState.favorites)
           ListTile(
             leading: Icon(Icons.favorite),
